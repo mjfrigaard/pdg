@@ -1,5 +1,5 @@
 as_zip <- function(lesson) {
-  glue::glue("https://github.com/mjfrigaard/pdg/raw/main/inst/lessons/{lesson}.zip")
+  glue::glue("https://github.com/paradigmdatagroup/{lesson}/archive/refs/heads/main.zip")
 }
 
 #' Install lesson materials
@@ -12,6 +12,8 @@ as_zip <- function(lesson) {
 #' @param destdir The path on your computer where you would like the learning
 #'   materials installed. If `NULL`, defaults to your Desktop or some other
 #'   conspicuous place.
+#'
+#' @export use_lesson
 #'
 #' @importFrom utils install.packages packageVersion
 use_lesson <- function(lesson, destdir = NULL) {

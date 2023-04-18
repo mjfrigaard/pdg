@@ -46,4 +46,10 @@ copy_lesson <- function(lesson) {
 new_lesson <- function(lesson) {
   zip_lesson(lesson = lesson)
   copy_lesson(lesson = lesson)
+  lesson_zip <- glue::glue("inst/dev/{lesson}.zip")
+  unlink(lesson_zip, force = TRUE)
+  lesson_prod_zip <- glue::glue("inst/lessons/{lesson}.zip")
+  if (fs::file_exists(lesson_prod_zip)) {
+    cli::cli_alert_success("lesson is ready to use!")
+  }
 }
