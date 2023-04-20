@@ -2,10 +2,16 @@ Package: pdg
 Type: Package
 Title: Paradigm Data Group Lessons
 Version: 0.1.0
-Author: Martin Frigaard
+Authors@R: 
+    person("Martin", "Frigaard", , "mfrigaard@paradigmdata.io", role = c("aut", "cre"))
 Maintainer: Martin Frigaard <mfrigaard@paradigmdata.io>
 Description: Load lesson materials and data from your R console. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
+Imports: 
+    glue,
+    rlang,
+    usethis

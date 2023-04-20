@@ -1,3 +1,10 @@
+#' Convert to zip
+#'
+#' @param lesson name of lesson
+#'
+#' @return link to zip file
+#'
+#' @importFrom glue glue
 as_zip <- function(lesson) {
   glue::glue("https://github.com/paradigmdatagroup/{lesson}/archive/refs/heads/main.zip")
 }
@@ -15,10 +22,9 @@ as_zip <- function(lesson) {
 #'
 #' @export use_lesson
 #'
-#' @importFrom utils install.packages packageVersion
+#' @importFrom usethis use_course
 use_lesson <- function(lesson, destdir = NULL) {
-  # check_pak()
-  # check_deps(lesson)
+  check_deps(lesson)
   usethis::use_course(
     url = as_zip(lesson),
     destdir = destdir

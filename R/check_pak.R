@@ -1,3 +1,9 @@
+#' Check for pak
+#'
+#' @return dependencies
+#'
+#' @importFrom usethis ui_yeah ui_stop
+#' @importFrom rlang check_installed
 check_pak <- function() {
   if (!rlang::is_installed("pak") && packageVersion("pak") >= "0.1.2.9001") {
     install_it <- usethis::ui_yeah(
@@ -8,6 +14,5 @@ check_pak <- function() {
 
     install.packages("pak", repos = "https://r-lib.github.io/p/pak/dev/")
   }
-
   invisible(NULL)
 }
